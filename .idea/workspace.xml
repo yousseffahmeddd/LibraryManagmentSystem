@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="ecf7c76d-8087-4b10-a6aa-16a91184b89b" name="Changes" comment="initial" />
+=======
+    <list default="true" id="ecf7c76d-8087-4b10-a6aa-16a91184b89b" name="Changes" comment="initial">
+<<<<<<< Updated upstream
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+=======
+>>>>>>> Stashed changes
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+>>>>>>> 7d868d40c2ed65fa8c5ebcc947209f335719c4ac
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -107,8 +117,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1715472228420</updated>
+<<<<<<< HEAD
       <workItem from="1715472249959" duration="8095000" />
       <workItem from="1715695308543" duration="318000" />
+=======
+      <workItem from="1715472249959" duration="9344000" />
+>>>>>>> 7d868d40c2ed65fa8c5ebcc947209f335719c4ac
     </task>
     <task id="LOCAL-00001" summary="initial">
       <option name="closed" value="true" />
