@@ -30,6 +30,11 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+LOGIN_URL = 'login'
+LOGOUT_REDIRECT_URL = 'login'
+LOGIN_REDIRECT_URL = 'home'
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
