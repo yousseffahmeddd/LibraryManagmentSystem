@@ -1,0 +1,36 @@
+.container5 {
+    display: flex;
+    text-align: center;
+    background-color: #ba531b;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+.container5 h2 img{
+    width: 10%;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+.container5 h2 {
+    font-family: "Alegreya", serif;
+    font-size: 30px;
+}
+.container5 ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    width: fit-content;
+    justify-content: center;
+}
+.container5 ul li i {
+    padding: 15px;
+    border-radius: 50%;
+    transition-duration: 0.5s;
+    color: #ddd;
+    cursor: pointer;
+}
+.container5 ul li i:hover {
+    background-color: #009ea3;
+    color: white;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="description" content="Online Library website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <link rel="icon" href="{% static 'images/logo.jpg' %}">
+    <link rel="stylesheet" href="{% static 'CSS/signup.css' %}"> <!-- Link to signup.css -->
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h2>Sign up Form</h2>
+            <form method="post" action="{% url 'sign_up' %}">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="em" placeholder="Ex: B0udy" required value="{{ form.username.value }}">
+                {{ form.username.errors }}
+                <p id="txt_user" style="color: brown"></p>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" class="em" placeholder="Enter Email" required value="{{ form.email.value }}">
+                {{ form.email.errors }}
+                <p id="txt_email" style="color: brown"></p>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" class="pw" placeholder="Enter Password" required>
+                {{ form.password.errors }}
+                <p id="txt_pas" style="color: brown"></p>
+
+                <label for="confirm_password">Repeat Password</label>
+                <input type="password" id="confirm_password" name="confirm_password" class="pw" placeholder="Repeat Password" required>
+                {{ form.confirm_password.errors }}
+                <p id="txt_pas" style="color: brown"></p>
+
+                <input type="radio" value="False" id="u1" name="user_type" required {% if not form.user_type.value %}checked{% endif %}>
+                <label for="u1">User</label>
+                <input type="radio" value="True" id="d1" name="user_type" {% if form.user_type.value %}checked{% endif %}>
+                <label for="d1">Admin</label>
+
+                <br>
+                <br>
+                <input type="submit" value="Sign Up">
+            </form>
+        </div>
+        <p>Already have an account? <a href="{% url 'login' %}" class="sign">Log in</a></p>
+    </div>
+    <script src="{% static 'Javascript/sign_up.js' %}"></script>
+</body>
+</html>

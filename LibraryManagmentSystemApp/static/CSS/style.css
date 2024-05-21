@@ -1,0 +1,210 @@
+body{
+    margin: 0;
+}
+.parent{
+    background-color: #009ea3;
+}
+.container {
+    width: 87%;
+    height: 155%;
+    margin-left: 7%;
+    padding-top: 9%;
+    display: grid;
+    grid-template-columns: 0.7fr 1.3fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        "item1 item3 item3"
+        "item1 item3 item3"
+        "item2 item3 item3"
+        "item2 item4 item4"
+        ". item4 item4";
+    gap: 3px;
+    background-color: #ebd9d9f9;
+}
+.item1 { 
+    grid-area: item1;
+    font-size: 1em;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 0;
+    margin-left: 12px;
+}
+.item1 .image1 .im1 img{
+    width: 180px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 0 #c3b683;
+    display: block;
+    transition-property: all;
+    transition-duration: 1s;
+}
+.im1{
+    margin-left: 16%;
+}
+.image1 a{
+    color: #0376b8;
+    text-decoration: none;
+    position: relative;
+    margin-top: 7px;
+    margin-bottom: 0;
+    padding: 5px 20px 10px;
+    background-color: transparent;
+    width: auto;
+    margin-left: 30%;
+    display: block;
+}
+.bt{
+    text-align: center;
+}
+.but1{
+    display: block;
+    margin-bottom: 6%;
+    font-size: 17px;
+    color: #fff;
+    width: 64%;
+    display: block;
+    border: 0;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background-color: #0376b8;
+    transition-property: all;
+    transition-duration: 1s;
+    margin: auto;
+}
+.but2{
+    display: block;
+    margin-bottom: 6%;
+    font-size: 17px;
+    width: 64%;
+    display: block;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: 18%;
+}
+.item2 { 
+    grid-area: item2;
+    font-size: 1em;
+    padding: 16px;
+    margin-bottom: 38%;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 0;
+    margin-left: 12px;
+}
+.item3 { 
+    grid-area: item3; 
+    background-color: rgb(227, 12, 12);
+    font-size: 1em;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 12px;
+}
+.item3 h1{
+    margin: 10px 0 0;
+    color: #333;
+    font-size: 2em;
+    overflow-wrap: break-word;
+    font-family: Georgia, "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+.item3 .ed{
+    font-style: oblique;
+    color: #666;
+}
+.item3 h2{
+    font-size: 1em;
+    font-weight: 400;
+    color: #333;
+    margin: 10px 0 20px;
+}
+.item3 h2 a{
+    color: #02598b;
+    font-size: 1em;
+    font-weight: 400;
+    margin: 10px 0 20px;
+}
+.item3 .rate{
+    color: #666;
+    font-size: .9em;
+    margin-bottom: 20px;
+}
+.item3 .rate li{
+    display: inline-block;
+    list-style-type: none;
+    line-height: 1.5em;
+    margin-left: 44px;
+}
+.read p{
+    font-size: 13px;
+    line-height: 1.5em;
+    margin-left: 43px;
+}
+.na{
+    margin-bottom: 30%;
+}
+.ch li{
+    margin-bottom: 24px;
+}
+.item4 { 
+    grid-area: item4; 
+    font-size: 1em;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-right: 12px;
+}
+.rate{
+    text-align: center;
+}
+.image1 img:hover ,.image2 img:hover{
+    transform: scale(1.07);
+}
+.time{
+    list-style: none;
+}
+.time li{
+    margin-bottom: 15px;
+}
+.but1:hover,.but3:hover{
+    background-color: #02598b;
+}
+.image2{
+    text-align: center;
+}
+.image2 img{
+    width: 180px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 2px 0 #c3b683;
+    display: block;
+    transition-property: all;
+    transition-duration: 1s;
+    margin: auto;
+}
+.but3{
+    font-size: 18px;
+    color: #fff;
+    width: 18%;
+    display: block;
+    border: 0;
+    border-radius: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background-color: #0376b8;
+    transition-property: all;
+    transition-duration: 1s;
+    margin: auto;
+    margin-top: 15px;
+}

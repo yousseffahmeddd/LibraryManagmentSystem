@@ -1,17 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}">
     <title>Login</title>
 </head>
 <body>
-    <h2>Login</h2>
-    <form method="post">
-        {% csrf_token %}
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username"><br><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password"><br><br>
-        <button type="submit">Login</button>
-    </form>
+    <div class="container">
+        <div>
+            <h2>Welcome Back!</h2>
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <label for="username">Username</label>
+                <br>
+                <input type="text" name="username" id="username" placeholder="Enter Username" class="em" value="{{ form.username.value }}">
+                {{ form.username.errors }}
+                <p id="txtlogin_username" style="color: brown;"></p>
+
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Enter Password" class="pw" value="{{ form.password.value }}">
+                {{ form.password.errors }}
+                <p id="txtlogin_password" style="color: brown;"></p>
+
+                <input type="submit" value="Login" class="log">
+            </form>
+        </div>
+        <p>Don't have an account? <a href="{% url 'sign_up' %}" class="sign">Sign Up now!</a></p>
+    </div>
+    <script src="{% static 'Javascript/login.js' %}"></script>
 </body>
 </html>

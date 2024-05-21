@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="eg">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="Online Library website">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Library website</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'CSS/nav.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/project.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/admin.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/footer.css' %}">
+
+    <link rel="icon" href="{% static 'images/logo.jpg' %}">
+    <script src="https://kit.fontawesome.com/bd735b1809.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <h2>
+            <img src="{% static 'images/logo2.jpg' %}" alt="logo">
+            Online Library
+        </h2>
+        <div class="links">
+            <ul>
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li>
+                    <input type="text" id="Search" placeholder="Search here" onkeypress="Search(event)">
+                </li>
+                <li><a id="addbtn" onclick="toggle()">Add New Book</a></li>
+                <li><a id="viewbtn" onclick="show()">View Book</a></li>
+                <li><a href="{% url 'logout' %}">Log out</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div id="add">
+        <form class="add_book" id="add_book">
+            <div class="item1">
+                <label for="book_name">Book Name:</label>
+                <input placeholder="Book Name" type="text" id="book_name" name="book_name" required>
+            </div>
+            <div class="item2">
+                <label for="author">Author:</label>
+                <input placeholder="Author Name" type="text" id="author" name="author" required>
+            </div>
+            <div class="item3">
+                <label for="category">Category:</label>
+                <input placeholder="Category" type="text" id="category" name="category" required>
+            </div>
+            <div class="item4">
+                <label for="description">Description:</label><br>
+                <textarea placeholder="Your Message" id="description" name="description" required rows="10"></textarea>
+            </div>
+            <div class="item5">
+                <div class="button-wrap">
+                    <label class="button" for="upload">Upload Book</label>
+                    <input id="upload" type="file" accept=".pdf" required/>
+                </div>
+            </div>
+            <div class="item6">
+                <button type="submit" class="button" id="addbook" form="Add" value="Add Book" onclick="Add_book(event)">Add Book</button>
+            </div>
+        </form>
+    </div>
+    <div id="view_book">
+        <div class="search">
+            <input list="list_books" name="books" id="view_books" placeholder="Search here">
+            <datalist id="list_books">
+                <option value="chrome">
+                <option value="younes">
+                <option value="chrome">
+                <option value="chrome">
+            </datalist>
+            <button onclick="document.getElementById('details_book').style.display='block'">Details</button>
+            <button onclick="document.getElementById('delete_book').style.display='block'">Delete</button>
+        </div>
+        <div id="details_book">
+            <form class="view">
+                <div class="vitem1">
+                    <label for="book_name">Book Name:</label>
+                    <input type="text" id="book_name" name="book_name" required><br>
+                </div>
+                <div class="vitem2">
+                    <label for="author">Author:</label>
+                    <input type="text" id="author" name="author" required><br>
+                </div>
+                <div class="vitem3">
+                    <label for="category">Category:</label>
+                    <input type="text" id="category" name="category" required><br>
+                </div>
+                <div class="vitem4">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required></textarea><br>
+                </div>
+                <div class="vitem5">
+                    <input type="submit" value="Save" class="button">
+                    <input type="button" value="Cancel" class="button">
+                </div>
+            </form>
+        </div>
+        <div id="delete_book">
+            <fieldset>
+                <legend><h2>Delete Book</h2></legend>
+                <p>Are you sure you want to delete this book?</p>
+                <form>
+                    <input type="submit" value="Delete" class="deletebtn">
+                </form>
+            </fieldset>
+        </div>
+    </div>
+    <div class="container1">
+        <div class="caption">
+            <p>Welcome to our</p>
+            <h1>Online Library Website</h1>
+            <p>We are one of the oldest and best libraries in the middle east</p>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="image">
+            <img src="{% static 'images/library-page.jpeg' %}" alt="library">
+        </div>
+        <div class="caption">
+            <div class="part1">
+                <h2>Who we are?</h2>
+                <p>One of the oldest library that could build its online website and offered to the user the possibility
+                    to borrow books, show them, or buy them online
+                </p>
+            </div>
+            <div class="part2">
+                <ul>
+                    <li><i class="fa-solid fa-face-smile-beam"></i>Website easy to use</li>
+                    <li><i class="fa-solid fa-book-open"></i>Offers many recommended categories</li>
+                    <li><i class="fa-solid fa-universal-access"></i>Offers some books for disabled people</li>
+                    <li><i class="fa-solid fa-money-check-dollar"></i>Books with cheap prices</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container3">
+        <h2>Available Books</h2>
+        <h3>Crime Category</h3>
+        <div class="crime">
+            <div class="book1">
+                <a href="{% url 'YSBH' %}">
+                    <img src="{% static 'images/YSBH.jpg' %}" alt="You shouldn't be here">
+                    <div class="desc">
+                        <p>Author: Lauren Thoman</p>
+                        <p>Published: 21-4-2024</p>
+                        <p>Price: 3.99$</p>
+                    </div>
+                </a>
+                <div class="options">
+                    <p><a href="{% url 'borrow' %}">Borrow</a></p>
+                    <p><a href="{% url 'YSBH' %}">View</a></p>
+                </div>
+            </div>
+            <div class="book2">
+                <a href="{% url 'MOTN' %}">
+                    <img src="{% static 'images/MOTN.jpg' %}" alt="Middle Of The Night">
+                    <div class="desc">
+                        <p>Author: Raliey Sager</p>
+                        <p>Published: 18-6-2023</p>
+                        <p>Price: 14.99$</p>
+                    </div>
+                </a>
+                <div class="options">
+                    <p><a href="{% url 'borrow' %}">Borrow</a></p>
+                    <p><a href="{% url 'MOTN' %}">View</a></p>
+                </div>
+            </div>
+        </div>
+        <h3>History Category</h3>
+        <div class="history">
+            <div class="book3">
+                <a href="{% url 'TSTF' %}">
+{#                    <img src="{% static 'images/TSTF.jpg' %}" alt="The six theif families">#}
+                    <div class="desc">
+                        <p>Author: Selena</p>
+                        <p>Published: 15-9-2019</p>
+                        <p>Price: 2.99$</p>
+                    </div>
+                </a>
+                <div class="options">
+                    <p><a href="{% url 'borrow' %}">Borrow</a></p>
+{#                    <p><a href="{% url 'TSTF' %}">View</a></p>#}
+                </div>
+            </div>
+            <div class="book4">
+                <a href="{% url 'CLIP' %}">
+{#                    <img src="{% static 'images/CLIP.jpg' %}" alt="Conflict in the russian libyan intervention">#}
+                    <div class="desc">
+                        <p>Author: Sarah Kreps</p>
+                        <p>Published: 4-8-2016</p>
+                        <p>Price: 9.99$</p>
+                    </div>
+                </a>
+                <div class="options">
+                    <p><a href="{% url 'borrow' %}">Borrow</a></p>
+                    <p><a href="{% url 'CLIP' %}">View</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>All rights are reserved to &copy; <a href="mailto:mfadle2021@gmail.com" target="_blank">Library</a></p>
+    </footer>
+    <script src="{% static 'Javascript/Add_Book.js' %}"></script>
+    <script src="{% static 'JS/nav.js' %}"></script>
+</body>
+</html>

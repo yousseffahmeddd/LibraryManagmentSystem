@@ -1,0 +1,262 @@
+*{  
+    box-sizing: border-box;
+    
+}
+#add,#view_book { 
+    position: absolute;
+    top: 12%;
+    width: 100%;
+    height: 90vh;
+    background-color: #612c10aa;
+    padding: 20px;
+    display: none;
+    
+}
+#add_book{
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 85%;
+}
+.add_book{
+    height: 100%;
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+    "item1 item1 item1"
+    "item2 item2 item2"
+    "item3 item3 item3"
+    "item4 item4 item4"
+    "item5 item5 item5"
+    "item6 item6 item6";
+    border: 5px solid gray;
+    border-radius: 5px;
+}
+.item1 { 
+    grid-area: item1;
+    margin-top: 3%; 
+} 
+.item1 input{ 
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 68%;
+    margin-left: 26px;
+    border-radius: 4px;
+}
+.item1 label{
+    margin-left: 1%;
+    color: gray;
+} 
+.item2 { 
+    grid-area: item2;
+    margin-top: 3%;  
+}
+.item2 input{ 
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 68%;
+    margin-left: 59px;
+    border-radius: 4px;
+}
+.item2 label{
+    margin-left: 16px;
+    color: gray;
+}
+.item3 { 
+    grid-area: item3;
+    margin-top: 3%; 
+} 
+.item3 input{ 
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 68%;
+    margin-left: 46px;
+    border-radius: 4px;
+}
+.item3 label{
+    margin-left: 1%;
+    color: gray;
+} 
+.item4 { 
+    grid-area: item4;
+    margin-top: 3%; 
+} 
+.item4 textarea{ 
+    padding-bottom: 1%;
+    padding-right: 68%;
+    margin-left: 130px;
+    border-radius: 4px;
+}
+.item4 label{
+    margin-left: 1%;
+    color: gray;
+} 
+.item5 {
+    grid-area: item5;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  input[type="file"] {
+    position: absolute;
+    z-index: -1;
+    top: 10px;
+    left: 8px;
+    font-size: 17px;
+    color: transparent;
+  }
+  
+  .button-wrap {
+    position: relative;
+    left: 10.5%;
+  }
+  
+.button {
+    display: inline-block;
+    padding: 12px 21px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color:#009ea3;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+.item6 { 
+    grid-area: item6; 
+    text-align: center;
+}
+::-webkit-resizer {
+    display: none;
+}
+input:focus-visible ,textarea:focus-visible{
+    outline: 1px solid #009ea3;
+}
+#addbook{
+    margin-top: 11px;
+    background-color: red;
+}
+#delete_book{
+    margin-top: 10%;
+    background-color: white;
+}
+#details_book{
+    background-color: white;
+}
+.deletebtn{
+    display: inline-block;
+    padding: 12px 21px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color:red;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+}
+/* #view_book{
+    top: 10%;
+} */
+.search{
+    position: relative;
+    top: 4%;
+    left: 62.5%;
+    transform: translate(-50%,-50%);
+}
+#details_book{
+    position: relative;
+    top: 33%;
+    width: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 5px solid gray;
+    border-radius: 5px;
+    
+
+}
+#delete_book{
+    position: relative;
+    top: -2%;
+    width: 75%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 5px solid gray;
+    border-radius: 5px;
+
+}
+.view{
+    position: relative;
+    
+}
+.vitem1 { 
+    margin-top: 4%; 
+} 
+.vitem1 input{ 
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 68%;
+    margin-left: 20px;
+    margin-top:10px ;
+    border-radius: 4px;
+}
+.vitem1 label{
+    margin-left: 1%;
+    color: gray;
+} 
+.vitem2 { 
+    margin-top: 3%;  
+}
+.vitem2 input{ 
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 68%;
+    margin-left: 50px;
+    border-radius: 4px;
+}
+.vitem2 label{
+    margin-left: 16px;
+    color: gray;
+}
+.vitem3 { 
+    grid-area: item3;
+    margin-top: 3%; 
+} 
+.vitem3 input{ 
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-right: 68%;
+    margin-left: 37px;
+    border-radius: 4px;
+}
+.vitem3 label{
+    margin-left: 1%;
+    color: gray;
+} 
+.vitem4 {
+    margin-top: 1%; 
+} 
+
+.vitem4 textarea {
+    padding-bottom: 1%;
+    padding-right: 68%;
+    margin-left: 22px; /* Center the text area */
+    margin-right: auto; /* Center the text area */
+    border-radius: 4px;
+    margin-top: 5px; /* Adjust spacing if needed */
+}
+.vitem4 label{
+    margin-left:14px;
+    color: gray;
+} 
+
+.vitem5 { 
+    text-align: center;
+}
+.useFontAwesomeFamily::placeholder {
+    font-family: "Font Awesome 5 Brands" !important;
+}

@@ -1,0 +1,217 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container1 {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../images/main-page-bg.jpeg);
+    background-size: cover;
+    color: white;
+    margin-bottom: 100px;
+}
+.container1 .caption {
+    background-color: rgba(33, 33, 33, 0.666);
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 2px;
+}
+.container1 .caption p:nth-of-type(2) {
+    width: 60%;
+    line-height: 1.5;
+}
+#arrow{
+    background-color: #bd551d;
+    border: none;
+    border-radius: 20px;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    padding-left: 15px;
+    cursor: pointer;
+    display: none;
+}
+.container2 {
+    background-color: #009ea3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    padding: 50px;
+    color: white;
+    margin-bottom: 100px;
+}
+.container2 .image {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+}
+.container2 .image img {
+    width: 80%;
+}
+.container2 .caption {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+.container2 .caption h2 , h1 , .container4 .caption h2 {
+    font-family: "Alegreya", serif;
+    letter-spacing: 2px;
+}
+.container2 .caption h2 {
+    font-size: 35px;
+}
+.container2 .caption p , .container4 .caption p {
+    line-height: 1.5;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+.container2 .caption .part1 p:first-of-type , .container4 .caption p:first-of-type {
+    width: 70%;
+}
+.container2 li , .container4 li {
+    margin-bottom: 20px;
+}
+.container2 ul , .container4 ul {
+    padding: 0;
+    list-style: none;
+    font-size: 18px;
+}
+.container3 {
+    background-color: #009ea3;
+    padding: 40px;
+    color: white;
+    margin-bottom: 100px;
+}
+.container3 h2 {
+    text-align: center;
+    font-family: "Alegreya", serif;
+    margin-bottom: 40px;
+    margin-top: 0;
+}
+.container3 .crime , .container3 .history , .container3 .novels , .container3 .nan {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    align-items: center;
+    border: 4px solid #69e7eb;
+    border-radius: 20px;
+    padding: 20px;
+    background-image: url(../images/crime.jpg);
+    color: white;
+    overflow: hidden;
+}
+.container3 .history {
+    background-image: url(../images/history.jpg);
+}
+.container3 .novels {
+    background-image: url(../images/novels.jpg);
+}
+.container3 .nan {
+    background-image: url(../images/novels.jpg);
+}
+.container3 .crime h3 {
+    width: 100%;
+}
+.container3 .crime .book1 , .container3 .crime .book2 ,
+.container3 .history .book1 , .container3 .history .book2 ,
+.container3 .novels .book1 , .container3 .novels .book2 , 
+.container3 .nan .book1 , .container3 .nan .book2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    padding: 20px;
+    background-color: rgba(64, 64, 64, 0.655);
+    border-radius: 10px;
+    transition-duration: 0.5s;
+}
+.container3 .history .book2 {
+    width: 50%;
+}
+.container3 .crime .book1:hover , .container3 .crime .book2:hover ,
+.container3 .history .book1:hover , .container3 .history .book2:hover , 
+.container3 .novels .book1:hover , .container3 .novels .book2:hover , 
+.container3 .nan .book1:hover , .container3 .nan .book2:hover {
+    transform: scale(1.1);
+}
+.container3 .crime .options ,
+.container3 .history .options ,  
+.container3 .novels .options , 
+.container3 .nan .options{
+    display: flex;
+    gap: 20px;
+}
+.container3 .crime .book1 a , .container3 .crime .book2 a ,
+.container3 .history .book1 a , .container3 .history .book2 a , 
+.container3 .novels .book1 a , .container3 .novels .book2 a , 
+.container3 .nan .book1 a , .container3 .nan .book2 a {
+    width: 50%;
+    text-decoration: none;
+    color: white;
+    overflow: hidden;
+    position: relative;
+}
+.container3 .crime .book1 img , .container3 .crime .book2 img , 
+.container3 .history .book1 img , .container3 .history .book2 img ,
+.container3 .novels .book1 img , .container3 .novels .book2 img , 
+.container3 .nan .book1 img , .container3 .nan .book2 img {
+    width: 100%;
+}
+.container3 .options p a {
+    padding: 10px;
+    background-color: rgb(146, 0, 44);
+    border-radius: 10px;
+    transition-duration: 0.5s;
+}
+.container3 .options p a:hover {
+    background-color: rgb(255, 0, 76);
+}
+.desc {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 100%;
+    background-color: rgba(49, 49, 49, 0.559);
+    transition-duration: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+.container3 .crime .book1 a:hover .desc , .container3 .crime .book2 a:hover .desc , 
+.container3 .history .book1 a:hover .desc , .container3 .history .book2 a:hover .desc , 
+.container3 .novels .book1 a:hover .desc , .container3 .novels .book2 a:hover .desc , 
+.container3 .nan .book1 a:hover .desc , .container3 .nan .book2 a:hover .desc{
+    top: 0;
+}
+.container4 {
+    background-color: #009ea3;
+    display: flex;
+    color: white;
+    justify-content: space-around;
+    padding: 40px;
+    gap: 30px;
+}
+.container4 .caption p:nth-of-type(2) {
+    margin: 40px 0px;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.container4 .caption ul li i , .container2 .caption ul li i{
+    padding: 10px;
+    border-radius: 50%;
+    background-color: #ba531b;
+    transition-duration: 0.5s;
+}
+.container4 .caption ul li:hover i , .container2 .caption ul li:hover i{
+    background-color: #009ea3;
+}
