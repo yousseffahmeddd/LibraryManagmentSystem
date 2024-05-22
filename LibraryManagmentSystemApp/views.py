@@ -21,12 +21,7 @@ def home(request):
     }
     template = loader.get_template('home.html')
     return HttpResponse(template.render(prameters, request))
-#
-#
-# def shopping(request):
-#     return HttpResponse("Welcome to shopping")
-#
-#
+
 # def sign_up(request):
 #     if request.method == 'POST':
 #         form = UserSignUpForm(request.POST)
@@ -103,7 +98,7 @@ def user(request):
     return render(request, 'user.html', context)
 
 
-# @login_required
-# def user_logout(request):
-#     logout(request)
-#     return redirect('login')  # Redirect to the login page after logout
+@login_required
+def user_logout(request):
+    logout(request)
+    return redirect('login')  # Redirect to the login page after logout
