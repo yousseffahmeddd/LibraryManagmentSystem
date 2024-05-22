@@ -29,9 +29,9 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-LOGIN_URL = 'login'
 LOGOUT_REDIRECT_URL = 'login'
-LOGIN_REDIRECT_URL = 'home'
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/admin/'
 
 
 INSTALLED_APPS = [
@@ -105,6 +105,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/

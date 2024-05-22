@@ -13,6 +13,8 @@ class User(AbstractBaseUser):
     password = models.CharField(max_length=255)
     email = models.EmailField(max_length=255)
     user_type = models.BooleanField(default=False)
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
 
     def __str__(self):
         return self.username

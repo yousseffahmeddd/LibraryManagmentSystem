@@ -34,15 +34,3 @@ class UserLoginForm(forms.Form):
     password = forms.CharField(widget=forms.PasswordInput)
 
 
-class CustomLoginView(LoginView):
-    template_name = 'LibraryManagmentSystemApp/login.html'
-
-    def form_valid(self, form):
-        # Check if the user is an admin
-        if form.get_user().is_superuser:
-            return redirect('admin')  # Replace 'admin_page' with the name of your admin URL
-        else:
-            return redirect('home')  # Replace 'home' with the name of the home URL for regular users
-
-        return super().form_valid(form)
-
