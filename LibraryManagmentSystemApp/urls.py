@@ -20,12 +20,12 @@ from django.urls import path
 from .views import *
 
 urlpatterns = [
-    path('home', home, name='home'),
-    path('shop', shopping, name='shopping'),
-    path('sign_up/', sign_up, name='sign_up'),
-    path('login/', user_login, name='login'),
-    path('admin/', admin, name='admin'),
+    path('', home, name='home'),
+    # path('shop', shopping, name='shopping'),
+    # path('sign_up/', sign_up, name='sign_up'),
+    # path('login/', user_login, name='login'),
+    path('user_admin/', user_admin, name='admin'),
     path('user/', user, name='user'),
-    path('logout/', user_logout, name='logout'),
-    path('accounts/login/', auth_views.LoginView.as_view(), name='accounts_login'),
+    # path('logout/', user_logout, name='logout'),
+    # path('accounts/login/', auth_views.LoginView.as_view(), name='accounts_login'),
 ]
