@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path
 from .views import *
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', home, name='home'),
     path('user_admin/', user_admin, name='admin'),
     path('user/', user, name='user'),
+    path('book/add/', add_book, name='add_book')
 
     # path('shop', shopping, name='shopping'),
     # path('sign_up/', sign_up, name='sign_up'),
@@ -30,3 +32,6 @@ urlpatterns = [
     # path('logout/', user_logout, name='logout'),
     # path('accounts/login/', auth_views.LoginView.as_view(), name='accounts_login'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

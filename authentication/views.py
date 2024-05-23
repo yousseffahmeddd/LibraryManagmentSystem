@@ -1,8 +1,8 @@
-from django.contrib.auth import authenticate,login,logout
-from django.shortcuts import render,redirect
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from pyexpat.errors import messages
-
 # from LibraryManagmentSystemApp.forms import UserLoginForm
 
 
@@ -23,7 +23,6 @@ def user_login(request):
     return render(request, 'login.html')
 
 
-
 def sign_up(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -37,3 +36,9 @@ def sign_up(request):
         new_user.save()
         return redirect('login')
     return render(request, 'sign_up.html')
+
+
+@login_required
+def user_logout(request):
+    logout(request)
+    return redirect('login')  # Redirect to the login page after logout

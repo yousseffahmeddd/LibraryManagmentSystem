@@ -1,16 +1,15 @@
 <!doctype html>
 <html lang="eg">
 <head>
+    {% load static %}
     <meta charset="utf-8">
     <meta name="description" content="Online Library website">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Library website</title>
-    {% load static %}
     <link rel="stylesheet" href="{% static 'CSS/nav.css' %}">
     <link rel="stylesheet" href="{% static 'CSS/project.css' %}">
     <link rel="stylesheet" href="{% static 'CSS/admin.css' %}">
     <link rel="stylesheet" href="{% static 'CSS/footer.css' %}">
-
     <link rel="icon" href="{% static 'images/logo.jpg' %}">
     <script src="https://kit.fontawesome.com/bd735b1809.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,45 +25,13 @@
         <div class="links">
             <ul>
                 <li><a href="{% url 'home' %}">Home</a></li>
-{#                <li><a href="{% url 'about' %}">About</a></li>#}
                 <li>
                     <input type="text" id="Search" placeholder="Search here" onkeypress="Search(event)">
                 </li>
-                <li><a id="addbtn" onclick="toggle()">Add New Book</a></li>
                 <li><a id="viewbtn" onclick="show()">View Book</a></li>
-{#                <li><a href="{% url 'logout' %}">Log out</a></li>#}
             </ul>
         </div>
     </nav>
-    <div id="add">
-        <form class="add_book" id="add_book">
-            <div class="item1">
-                <label for="book_name">Book Name:</label>
-                <input placeholder="Book Name" type="text" id="book_name" name="book_name" required>
-            </div>
-            <div class="item2">
-                <label for="author">Author:</label>
-                <input placeholder="Author Name" type="text" id="author" name="author" required>
-            </div>
-            <div class="item3">
-                <label for="category">Category:</label>
-                <input placeholder="Category" type="text" id="category" name="category" required>
-            </div>
-            <div class="item4">
-                <label for="description">Description:</label><br>
-                <textarea placeholder="Your Message" id="description" name="description" required rows="10"></textarea>
-            </div>
-            <div class="item5">
-                <div class="button-wrap">
-                    <label class="button" for="upload">Upload Book</label>
-                    <input id="upload" type="file" accept=".pdf" required/>
-                </div>
-            </div>
-            <div class="item6">
-                <button type="submit" class="button" id="addbook" form="Add" value="Add Book" onclick="Add_book(event)">Add Book</button>
-            </div>
-        </form>
-    </div>
     <div id="view_book">
         <div class="search">
             <input list="list_books" name="books" id="view_books" placeholder="Search here">
@@ -126,7 +93,7 @@
             <div class="part1">
                 <h2>Who we are?</h2>
                 <p>One of the oldest library that could build its online website and offered to the user the possibility
-                    to borrow books, show them, or buy them online
+                    to borrow books, show them or buy them online
                 </p>
             </div>
             <div class="part2">
@@ -140,74 +107,54 @@
         </div>
     </div>
     <div class="container3">
-        <h2>Available Books</h2>
-        <h3>Crime Category</h3>
-        <div class="crime">
-            <div class="book1">
-{#                <a href="{% url 'YSBH' %}">#}
-                    <img src="{% static 'images/YSBH.jpg' %}" alt="You shouldn't be here">
-                    <div class="desc">
-                        <p>Author: Lauren Thoman</p>
-                        <p>Published: 21-4-2024</p>
-                        <p>Price: 3.99$</p>
-                    </div>
-                </a>
-                <div class="options">
-{#                    <p><a href="{% url 'borrow' %}">Borrow</a></p>#}
-{#                    <p><a href="{% url 'YSBH' %}">View</a></p>#}
-                </div>
-            </div>
-            <div class="book2">
-{#                <a href="{% url 'MOTN' %}">#}
-                    <img src="{% static 'images/MOTN.jpg' %}" alt="Middle Of The Night">
-                    <div class="desc">
-                        <p>Author: Raliey Sager</p>
-                        <p>Published: 18-6-2023</p>
-                        <p>Price: 14.99$</p>
-                    </div>
-                </a>
-                <div class="options">
-{#                    <p><a href="{% url 'borrow' %}">Borrow</a></p>#}
-{#                    <p><a href="{% url 'MOTN' %}">View</a></p>#}
-                </div>
-            </div>
+        <form class="f" method="post" enctype="multipart/form-data" action="/home/book/add/">
+            {% csrf_token %}
+            <input type="text" placeholder="Name" id="bookName" name="title">
+            <input type="text" placeholder="Author" id="Author" name="author">
+            <input type="text" placeholder="Category" id="Category" name="category">
+            <input type="text" placeholder="Language" id="Language" name="language">
+            <input type="date" placeholder="Publication Date" id="Publication" name="publication_date">
+            <textarea id="Description" placeholder="Description" name="description"></textarea>
+            <input accept="image/*" type="file" name="cover_image" id="imgs"><br>
+            <input style="margin-top: 10px;" accept=".pdf" type="file" name="book_pdf" id="pdfs"><br>
+            <button class="button" id="addbook" type="submit">Add Book</button>
+        </form>
+    </div>
+    <div class="container4">
+        <div class="caption">
+            <h2>Contact Information</h2>
+            <p>We have branches in many locations in Arabic countries like Egypt, Tunisia, Algeria,
+                Palestine but our main branch is in Egypt exactly in Cairo, we are trying these days
+                to extend our branches to Europe and Asia countries
+            </p>
+            <p>Our Main Branch contact information:</p>
+            <ul>
+                <li><i class="fa-solid fa-map"></i>Cairo, Eltahrir, beside El-Sadat metro station</li>
+                <li><i class="fa-solid fa-phone"></i>+46 123 456 789</li>
+                <li><i class="fa-solid fa-headphones"></i>+37 431 456 789</li>
+                <li><i class="fa-regular fa-envelope"></i>hello@sitename.com</li>
+            </ul>
         </div>
-        <h3>History Category</h3>
-        <div class="history">
-            <div class="book3">
-{#                <a href="{% url 'TSTF' %}">#}
-{#                    <img src="{% static 'images/TSTF.jpg' %}" alt="The six theif families">#}
-                    <div class="desc">
-                        <p>Author: Selena</p>
-                        <p>Published: 15-9-2019</p>
-                        <p>Price: 2.99$</p>
-                    </div>
-                </a>
-                <div class="options">
-{#                    <p><a href="{% url 'borrow' %}">Borrow</a></p>#}
-{#                    <p><a href="{% url 'TSTF' %}">View</a></p>#}
-                </div>
-            </div>
-            <div class="book4">
-{#                <a href="{% url 'CLIP' %}">#}
-{#                    <img src="{% static 'images/CLIP.jpg' %}" alt="Conflict in the russian libyan intervention">#}
-                    <div class="desc">
-                        <p>Author: Sarah Kreps</p>
-                        <p>Published: 4-8-2016</p>
-                        <p>Price: 9.99$</p>
-                    </div>
-                </a>
-                <div class="options">
-{#                    <p><a href="{% url 'borrow' %}">Borrow</a></p>#}
-{#                    <p><a href="{% url 'CLIP' %}">View</a></p>#}
-                </div>
-            </div>
+        <div class="location">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1641.7230634988741!2d31.23475117724306!3d30.046536454553813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145841e122cdd6bb%3A0x629f170304fb1441!2sCAF%20Cafe%20-%20The%20Egyptian%20Museum!5e0!3m2!1sar!2seg!4v1713556262705!5m2!1sar!2seg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </div>
-    <footer>
-        <p>All rights are reserved to &copy; <a href="mailto:mfadle2021@gmail.com" target="_blank">Library</a></p>
-    </footer>
-    <script src="{% static 'Javascript/Add_Book.js' %}"></script>
-    <script src="{% static 'JS/nav.js' %}"></script>
+    <div class="container5">
+        <h2>
+            <img src="{% static 'images/logo2.jpg' %}" alt="logo">
+            Online Library
+        </h2>
+        <p>Copyright &copy; 2024. All rights reserved.</p>
+        <ul>
+            <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+            <li><i class="fa-brands fa-x-twitter"></i></li>
+            <li><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+            <li><i class="fa fa-linkedin" aria-hidden="true"></i></li>
+        </ul>
+    </div>
+    <button id="arrow"><i class="fa-solid fa-arrow-up"></i></button>
+    <script src="{% static 'Javascript/new_books.js' %}"></script>
+    <script src="{% static 'Javascript/books.js' %}"></script>
+    <script src="{% static 'Javascript/search.js' %}"></script>
 </body>
 </html>

@@ -1,13 +1,15 @@
 <!doctype html>
 <html lang="eg">
 <head>
+    {% load static %}    
     <meta charset="utf-8">
     <meta name="description" content="Online Library website">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Library website</title>
-    {% load static %}
     <link rel="stylesheet" href="{% static 'CSS/nav.css' %}">
     <link rel="stylesheet" href="{% static 'CSS/project.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/admin.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/footer.css' %}">
     <link rel="icon" href="{% static 'images/logo.jpg' %}">
     <script src="https://kit.fontawesome.com/bd735b1809.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -30,7 +32,7 @@
                     <input type="text" id="Search" placeholder="Search here" onkeypress="Search(event)">
                 </li>
                 <li><a href="{% url 'login' %}">Log in</a></li>
-                <li><a href="{% url 'sign_up' %}">Sign up</a></li>
+{#                <li><a href="{% url 'signup' %}">Sign up</a></li>#}
             </ul>
         </div>
     </nav>
@@ -63,140 +65,18 @@
         </div>
     </div>
     <div class="container3">
-        <h2>Available Books</h2>
-        <h3>Crime Category</h3>
-        <div class="crime">
-            <div class="book1">
-{#                <a href="{% url 'YSBH' %}">#}
-                    <img src="{% static 'images/YSBH.jpg' %}" alt="You shouldnt be here">
-                    <div class="desc">
-                        <p>Author: Lauren Thoman</p>
-                        <p>Published: 21-4-2024</p>
-                        <p>Price: 3.99$</p>
-                    </div>
-                </a>
-                <div class="options">
-{#                    <p><a href="{% url 'borrow' %}">Borrow</a></p>#}
-{#                    <p><a href="{% url 'YSBH' %}">View</a></p>#}
-                </div>
+            <div class="body1" id="bod1">
+                
             </div>
-            <div class="book2">
-{#                <a href="{% url 'MOTN' %}">#}
-                    <img src="{% static 'images/MOTN.jpg' %}" alt="Middle Of The Night">
-                    <div class="desc">
-                        <p>Author: Raliey Sager</p>
-                        <p>Published: 18-6-2023</p>
-                        <p>Price: 14.99$</p>
-                    </div>
-                </a>
-                <div class="options">
-{#                    <p><a href="{% url 'borrow' %}">Borrow</a></p>#}
-{#                    <p><a href="{% url 'MOTN' %}">View</a></p>#}
-                </div>
-            </div>
-        </div>
-        <h3>History Category</h3>
-        <div class="history">
-            <div class="book1">
-{#                <a href="{% url 'British-Empire' %}">#}
-                    <img src="{% static 'images/British-Empire.jpg' %}" alt="British Empire">
-                    <div class="desc">
-                        <p>Author: Billy Wellman</p>
-                        <p>Published: 1-2-2024</p>
-                        <p>Price: 9.99$</p>
-                    </div>
-                </a>
-                <div class="options">
-{#                    <p><a href="{% url 'borrow' %}">Borrow</a></p>#}
-{#                    <p><a href="{% url 'British-Empire' %}">View</a></p>#}
-                </div>
-            </div>
-            <div class="book2">
-{#                <a href="{% url 'American-history' %}">#}
-                    <img src="{% static 'images/American-history.jpg' %}" alt="American History">
-                    <div class="desc">
-                        <p>Author: Smith Sonian</p>
-                        <p>Published: 21-7-2021</p>
-                        <p>Price: 9.99$</p>
-                    </div>
-                </a>
-                <div class="options">
-{#                    <p><a href="{% url 'borrow' %}">Borrow</a></p>#}
-{#                    <p><a href="{% url 'American-history' %}">View</a></p>#}
-                </div>
-            </div>
-        </div>
-        <h3>Novels Category</h3>
-        <div class="novels">
-            <div class="book1">
-{#                <a href="{% url 'Germany-in-the-world' %}">#}
-                    <img src="{% static 'images/Germany-in-the-world.jpg' %}" alt="Germany in the world">
-                    <div class="desc">
-                        <p>Author: David Blackbourn</p>
-                        <p>Published: 11-6-2023</p>
-                        <p>Price: 39.99$</p>
-                    </div>
-                </a>
-                <div class="options">
-{#                    <p><a href="{% url 'borrow' %}">Borrow</a></p>#}
-{#                    <p><a href="{% url 'Germany-in-the-world' %}">View</a></p>#}
-                </div>
-            </div>
-            <div class="book2">
-{#                <a href="{% url 'In-the-lonely-hours' %}">#}
-{#                    <img src="{% static 'images/In-the-lonely-hours.jpg' %}" alt="In the lonely hours">#}
-                    <div class="desc">
-                        <p>Author: Smith Sonian</p>
-                        <p>Published: 21-7-2021</p>
-                        <p>Price: 29.99$</p>
-                    </div>
-                </a>
-                <div class="options">
-{#                    <p><a href="{% url 'borrow' %}">Borrow</a></p>#}
-{#                    <p><a href="{% url 'In-the-lonely-hours' %}">View</a></p>#}
-                </div>
-            </div>
-        </div>
-        <h3>New Added Novels Category</h3>
-        <div class="nan">
-            <div class="book1">
-{#                <a href="{% url 'goodbyerussia' %}">#}
-{#                    <img src="{% static 'images/goodbyerussia.jpg' %}" alt="Goodbye Russia">#}
-                    <div class="desc">
-                        <p>Author: Fiona Maddocks</p>
-                        <p>Published: 11-5-2023</p>
-                        <p>Price: 39.99$</p>
-                    </div>
-                </a>
-                <div class="options">
-{#                    <p><a href="{% url 'borrow' %}">Borrow</a></p>#}
-{#                    <p><a href="{% url 'goodbyerussia' %}">View</a></p>#}
-                </div>
-            </div>
-            <div class="book2">
-{#                <a href="{% url '40days' %}">#}
-{#                    <img src="{% static 'images/fourteendays.jpg' %}" alt="Fourteen Days">#}
-                    <div class="desc">
-                        <p>Author: Atwood and Preston</p>
-                        <p>Published: 1-8-2023</p>
-                        <p>Price: 9.99$</p>
-                    </div>
-                </a>
-                <div class="options">
-{#                    <p><a href="{% url 'borrow' %}">Borrow</a></p>#}
-{#                    <p><a href="{% url '40days' %}">View</a></p>#}
-                </div>
-            </div>
-        </div>
     </div>
     <div class="container4">
         <div class="caption">
             <h2>Contact Information</h2>
-            <p>We have branches in many locations in Arabic countries like Egypt, Tunisia, Algeria,
+            <p>We have branches in many locations in Arabic countries like Egypt, Tunisia, Algeria, 
                 Palestine but our main branch is in Egypt exactly in Cairo, we are trying these days
                 to extend our branches to Europe and Asia countries
             </p>
-            <p>Our Main Branch contact information: </p>
+            <p>Our Main Branch contact information:</p>
             <ul>
                 <li><i class="fa-solid fa-map"></i>Cairo, Eltahrir, beside El-Sadat metro station</li>
                 <li><i class="fa-solid fa-phone"></i>+46 123 456 789</li>
@@ -210,7 +90,7 @@
     </div>
     <div class="container5">
         <h2>
-{#            <img src="{% static 'images/logo2.jpg' %}" alt="logo">#}
+            <img src="{% static 'images/logo2.jpg' %}" alt="logo">
             Online Library
         </h2>
         <p>Copyright &copy; 2024. All rights reserved.</p>
@@ -221,9 +101,13 @@
             <li><i class="fa fa-linkedin" aria-hidden="true"></i></li>
         </ul>
     </div>
-    <button id="arrow"><i class="fa-solid fa-arrow-up"></i></button>
-    <script src="{% static 'Javascript/main.js' %}"></script>
-    <script src="{% static 'Javascript/books.js' %}"></script>
-    <script src="{% static 'Javascript/search.js' %}"></script>
+        <button id="arrow"><i class="fa-solid fa-arrow-up"></i></button>
+
+        <script src="{% static 'Javascript/new_books.js' %}"></script>  
+        <script src="{% static 'Javascript/books.js' %}"></script>
+        <script src="{% static 'Javascript/search.js' %}"></script>
+        <script src="{% static 'Javascript/main.js' %}"></script>
+        <script src="{% static 'Javascript/main4.js' %}"></script>
 </body>
 </html>
+
