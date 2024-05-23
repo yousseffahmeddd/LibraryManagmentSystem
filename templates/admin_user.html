@@ -106,7 +106,7 @@
             </div>
         </div>
     </div>
-    <div class="container3">
+    <div class="cont3">
         <form class="f" method="post" enctype="multipart/form-data" action="/home/book/add/">
             {% csrf_token %}
             <input type="text" placeholder="Name" id="bookName" name="title">
@@ -117,8 +117,35 @@
             <textarea id="Description" placeholder="Description" name="description"></textarea>
             <input accept="image/*" type="file" name="cover_image" id="imgs"><br>
             <input style="margin-top: 10px;" accept=".pdf" type="file" name="book_pdf" id="pdfs"><br>
-            <button class="button" id="addbook" type="submit">Add Book</button>
+            <button class="button" id="addbook" type="submit">Add Book </button>
+            <button class="button" id="updateBook" type="submit">Update Book</button>
         </form>
+    </div>
+    <div class="container3">
+                <div class="subparent">
+                    <form method="post" action="/home/book/search_author/">
+                        {% csrf_token %} 
+                        <input type="text" name="author" placeholder="Search by author">
+                        <button type="submit">Search</button>
+                    </form>
+                    <form method="post" action="/home/book/search_title/">
+                        {% csrf_token %} 
+                        <input type="text" name="title" placeholder="Search by title">
+                        <button type="submit">Search</button>
+                    </form>
+                    <form method="post" action="/home/book/search_category/">
+                        {% csrf_token %} 
+                        <input type="text" name="category" placeholder="Search by category">
+                        <button type="submit">Search</button>
+                    </form>
+                    
+{#                    <input type="text" oninput="Searchcategory()" list="products" placeholder="Search by category" id="searchcategory">#}
+{#                    <input type="text" oninput="Searchauthor()" placeholder="search by author" id="searchauthor">#}
+{#                    <input type="text" oninput="Searchtitle()" placeholder="search by title" id="searchtitle">#}
+                </div>
+            <div class="body1" id="bod">
+
+            </div>
     </div>
     <div class="container4">
         <div class="caption">

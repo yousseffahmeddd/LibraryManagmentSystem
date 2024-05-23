@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{% static 'CSS/style.css' %}">
+</head>
+<body>
+    <h1>Search Results</h1>
+    <div class="book-container">
+        {% if books %}
+            {% for book in books %}
+            <div class="book-item">
+                <h3>{{ book.title }}</h3>
+                <img src="{{ book.cover_image.url }}" alt="{{ book.title }}">
+                <p>Author: {{ book.author }}</p>
+                <p>Description: {{ book.description }}</p>
+                <p>Publish Date: {{ book.publish_date }}</p>
+                <p>Language: {{ book.language }}</p>
+                <p>Category: {{ book.category }}</p>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No books found matching your search criteria.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

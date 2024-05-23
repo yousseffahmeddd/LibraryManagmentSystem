@@ -24,7 +24,13 @@ urlpatterns = [
     path('', home, name='home'),
     path('user_admin/', user_admin, name='admin'),
     path('user/', user, name='user'),
-    path('book/add/', add_book, name='add_book')
+    path('book/add/', add_book, name='add_book'),
+    path('book/delete/', delete_book, name='delete_book'),
+    path('book/search_author/', search_author, name='search_author'),
+    # path('search_author/auther=<string:auther>', search_author, name='search_author'),
+    path('book/search_category/', search_category, name='search_category'),
+    path('book/search_title/', search_title, name='search_title'),
+    # path('book-view/', book_view, name='book_view'),
 
     # path('shop', shopping, name='shopping'),
     # path('sign_up/', sign_up, name='sign_up'),
