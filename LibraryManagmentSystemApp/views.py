@@ -23,62 +23,7 @@ def home(request):
     template = loader.get_template('home.html')
     return HttpResponse(template.render(prameters, request))
 
-# def sign_up(request):
-#     if request.method == 'POST':
-#         form = UserSignUpForm(request.POST)
-#         if form.is_valid():
-#             form.save()
-#             return redirect('login')  # Adjust the redirect to your login view
-#     else:
-#         form = UserSignUpForm()
-#     return render(request, 'sign_up.html', {'form': form})
-#
-#
-# # def user_login(request):
-# #     if request.method == 'post':
-# #         form = UserLoginForm(request.POST)
-# #         if form.is_valid():
-# #             username = form.cleaned_data['username']
-# #             password = form.cleaned_data['password']
-# #
-# #             try:
-# #                 user = User.objects.get(username=username)
-# #                 if check_password(password, user.password):
-# #                     login(request, user)
-# #                     if user.user_type:  # Assuming user_type True means admin
-# #                         return redirect("admin")  # Adjust the redirect to your admin dashboard view
-# #                     else:
-# #                         return redirect('user')  # Adjust the redirect to your user dashboard view
-# #                 else:
-# #                     form.add_error('password', 'Invalid password')
-# #             except User.DoesNotExist:
-# #                 form.add_error('username', 'User does not exist')
-# #     else:
-# #         print("Error here!!")
-# #         form = UserLoginForm()
-# #
-# #     return render(request, 'login.html', {'form': form})
-#
-#
-# def user_login(request):
-#     if request.method == 'POST':
-#         form = UserLoginForm(request.POST)
-#         if form.is_valid():
-#             usernameF = form.cleaned_data['username']
-#             passwordF = form.cleaned_data['password']
-#             user = authenticate(request, username=usernameF, password=passwordF)
-#             if user is not None:
-#                 login(request, user)
-#                 return redirect('home')
-#             else:
-#                 messages.error(request, 'Invalid Username or Password')
-#         else:
-#             print(form.errors)
-#     else:
-#         form = UserLoginForm()
-#     return render(request, 'login.html', {'form': form})
-#
-#
+
 @login_required
 def user_admin(request):
     if not request.user.is_superuser:
@@ -93,6 +38,9 @@ def user_admin(request):
 
 @login_required
 def user(request):
+    if (request.user.is_superuser):
+        return HttpResponse("sorry, not allowed to access this page")
+
     # Logic to get data specific to the user dashboard
     context = {
         'title': 'User Dashboard',
